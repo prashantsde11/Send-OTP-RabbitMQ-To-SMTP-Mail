@@ -1,0 +1,7 @@
+fastapi
+aio_pika
+aioredis
+aiosmtplib
+pydantic
+uvicorn
+python-dotenv
