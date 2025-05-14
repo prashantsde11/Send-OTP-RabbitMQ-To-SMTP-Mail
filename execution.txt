@@ -1,0 +1,25 @@
+1. Install all necessary dependencies:
+   => pip install -r requirements.txt
+
+2. Start the FastAPI application (Producer):
+   Run the FastAPI application to accept OTP requests:
+
+   => uvicorn app.main:app --reload
+
+3. Start the Worker (Consumer):
+   Run the worker to consume messages from RabbitMQ, store the OTP in Redis, and send the OTP email:
+
+   => python app/worker.py
+   
+
+
+****************** Summary of the Final Code *******************************
+   => Producer (main.py): The FastAPI application accepts OTP requests, sends them to RabbitMQ for processing.
+
+   => Worker (worker.py): Consumes messages from RabbitMQ, stores OTP in Redis, and sends OTP emails using a dynamic HTML template.
+
+   => Configuration (config.py): Manages environment settings for RabbitMQ, Redis, and SMTP.
+
+   => HTML Template (otp_template.html): The email template for OTP with dynamic content insertion.
+
+   => Environment Variables (.env): Stores the RabbitMQ, Redis, and SMTP credentials.
